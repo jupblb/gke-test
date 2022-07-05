@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test App</title>
+  </head>
+  <body>
+    <h1>
+      <div>Time diff: <span id="tdiff"></span>ms</div>
+      <div>Worker id: {{.WorkerId}}</div>
+    </h1>
+    <script>
+      const d1 = new Date()
+      const d2 = new Date("{{.Date}}")
+      document.getElementById("tdiff").innerHTML = d1-d2
+    </script>
+  </body>
+</html>

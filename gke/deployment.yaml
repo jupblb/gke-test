@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test
+        image: gcr.io/jupblb-gke-dev/test-app:tag1
+        ports:
+          - containerPort: 8080
+        resources:
+          requests:
+            cpu: 400m
+            memory: 100Mi
